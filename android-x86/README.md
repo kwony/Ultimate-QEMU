@@ -30,11 +30,13 @@ kvm module will make your virtual machine run faster!
 qemu-system-x86_64 \
         -cpu host \
         -smp 8 \ 
-        -vga std -enable-kvm -m 2048 \
+        -vga std -m 2048 \
         -monitor telnet:localhost:8080,server,nowait \
         -drive file=android.qcow2,cache=none \
-        -cdrom android-x86_64-8.1-rc1.iso \
+        -cdrom android-x86_64-8.1-rc1.iso \        
 </code></pre>
+(optional) If you have a kvm module(/dev/kvm), then add one more option to fast your computer
+> -enable-kvm 
 
 Below log message may be printed on your monitor
 > VNC server running on 127.0.0.1:5900
