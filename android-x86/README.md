@@ -6,20 +6,20 @@
 
 > http://www.android-x86.org/releases/releasenote-8-1-rc1
 
-2. Install qemu with the latest code <br>
-<pre><code>
+2. Install qemu with the latest code 
+```
 git clone git@github.com:qemu/qemu.git
 cd qemu
 # Configure qemu various options.
 ./configre --target-list=x86_64-softmmu --enable-debug --enable-kvm --enable-vnc
 make -j8
 sudo make install
-</code></pre>
+```
 
 3. Create empty qcow2 file disk image <br>
-<pre><code>
+```
 qemu-img create -f qcow2 android.qcow2 20G
-</code></pre>
+```
 
 4. (optional) Enable kvm module in your host computer <br>
 kvm module will make your virtual machine run faster!
@@ -27,7 +27,7 @@ kvm module will make your virtual machine run faster!
 ### Run android QEMU
 
 1. Launch qemu with options <br>
-<pre><code>
+```
 qemu-system-x86_64 \
         -cpu host \
         -smp 8 \ 
@@ -35,11 +35,11 @@ qemu-system-x86_64 \
         -monitor telnet:localhost:8080,server,nowait \
         -drive file=android.qcow2,cache=none \
         -cdrom android-x86_64-8.1-rc1.iso \        
-</code></pre>
+```
 (optional) If you have a kvm module(/dev/kvm), then add one more option to fast your computer
-<pre><code>
+```
 -enable-kvm
-</code></pre>
+```
 
 Below log message may be printed on your monitor
 > VNC server running on 127.0.0.1:5900
