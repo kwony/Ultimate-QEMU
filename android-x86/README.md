@@ -17,8 +17,9 @@ sudo make install
 </code></pre>
 
 3. Create empty qcow2 file disk image <br>
-
-> qemu-img create -f qcow2 android.qcow2 20G
+<pre><code>
+qemu-img create -f qcow2 android.qcow2 20G
+</code></pre>
 
 4. (optional) Enable kvm module in your host computer <br>
 kvm module will make your virtual machine run faster!
@@ -36,7 +37,9 @@ qemu-system-x86_64 \
         -cdrom android-x86_64-8.1-rc1.iso \        
 </code></pre>
 (optional) If you have a kvm module(/dev/kvm), then add one more option to fast your computer
-> -enable-kvm 
+<pre><code>
+-enable-kvm
+</code></pre>
 
 Below log message may be printed on your monitor
 > VNC server running on 127.0.0.1:5900
