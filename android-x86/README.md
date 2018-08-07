@@ -42,8 +42,9 @@ qemu-system-x86_64 \
 ```
 
 Below log message may be printed on your monitor
-> VNC server running on 127.0.0.1:5900
-
+```
+VNC server running on 127.0.0.1:5900
+```
 2. Use VNC protocol and connect <br>
 
 Ubuntu 16.04 has "Reminna Remote Desktop Client" software as default. <br>
